@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>nazo</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type="image/vnd.microsoft.icon"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>web謎例</h2>
+      <div class="pre">
+        これはweb謎解きの一例を載せたサイトです。まず、以下の4問の謎を解き、解答入力フォームに答えを入力し送信してください。（モックなので正誤判定機能はありません。また、最終問題は適当です。）
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <form id="form1" class="cardA">
+            <label>Q. 1</label>
+            <div>
+              <img src="./ライト.png"></img>
+            </div>
+            <input name="answer" placeholder="答えを入力" class="inputA" type="text">
+            <input type="submit" value="送信">
+          </form>
+        </div>
+        <div class="col-6">
+          <form id="form2" class="cardA">
+            <label>Q. 2</label>
+            <div>
+              <img src="./白兎.png"></img>
+            </div>
+            <input name="answer" placeholder="答えを入力" class="inputA" type="text">
+            <input type="submit" value="送信">
+          </form>          
+        </div>          
+        <div class="col-6">
+          <form id="form3" class="cardA">
+            <label>Q. 3</label>
+            <div>
+              <img src="./くまのみ.png"></img>
+            </div>
+            <input name="answer" placeholder="答えを入力" class="inputA" type="text">
+            <input type="submit" value="送信">
+          </form>          
+        </div>          
+        <div class="col-6">
+          <form id="form-final" class="cardA">
+            <label>Q. 4</label>
+            <div>
+              <img src="./英単語.png"></img>
+            </div>
+            <input name="answer" placeholder="答えを入力" class="inputA" type="text">
+            <input type="submit" value="送信">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <form id="form-final" class="cardA">
+            <label>Final Question</label>
+            <div>
+              <img src="./解答用紙.png"></img>
+            </div>
+            <input type="submit" value="送信">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    img {
+      border: 1px #333 solid;
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .cardA {
+      margin: 20px;
+      vertical-align: middle;
+    }
+    .inputA {
+      margin: 20px 0;
+    }
+  </style>
+  <script>
+    function submitHandler(event) {
+      event.preventDefault();
+      alert(`「${event.currentTarget['answer'].value}」正解です!`);
+    }
+
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+    const form3 = document.getElementById('form3');
+    const form4 = document.getElementById('form4');
+    form1.addEventListener('submit', submitHandler);
+    form2.addEventListener('submit', submitHandler);
+    form3.addEventListener('submit', submitHandler);
+    form4.addEventListener('submit', submitHandler);
+  </script>
+</html>
